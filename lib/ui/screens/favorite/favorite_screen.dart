@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:weel7_small_hw/ui/widgets/song_tile.dart';
 
 import '../../../data/repositories/songs/song_repository.dart';
 import '../../../model/songs/song.dart';
@@ -10,7 +11,7 @@ import '../../theme/theme.dart';
 class FavoriteScreen extends StatelessWidget {
   const FavoriteScreen({super.key});
 
- 
+
   @override
   Widget build(BuildContext context) {
     // 1- Read the globbal song repository
@@ -46,29 +47,6 @@ class FavoriteScreen extends StatelessWidget {
             ),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class SongTile extends StatelessWidget {
-  const SongTile({
-    super.key,
-    required this.song,
-    required this.isPlaying,
-  });
-
-  final Song song;
-  final bool isPlaying;
-
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(song.title),
-      trailing: Text(
-        isPlaying ? "Playing" : "",
-        style: TextStyle(color: Colors.amber),
       ),
     );
   }
